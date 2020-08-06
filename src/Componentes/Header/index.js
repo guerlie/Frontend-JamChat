@@ -6,9 +6,9 @@ export default class Header extends Component {
         return (
             <div class="bg-dark">
             <nav class="navbar navbar-dark bg-dark container">
-                <a class="navbar-brand" href="#">JamChat</a>
+                <a class="navbar-brand" href="#"><h1>JamChat</h1></a>
 
-                <div class="navbar-nav">
+                <div class="navbar-nav ">
                     <Login/>
                 </div>
             </nav>
