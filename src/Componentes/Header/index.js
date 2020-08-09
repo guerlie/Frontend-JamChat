@@ -1,37 +1,43 @@
-import React, { Component } from 'react'
+import React, { useState, useEffect } from 'react'
 import Login from '../Login'
 
-export default class Header extends Component {
+export default function Header() {
 
-    constructor(props){
-        super(props)
-        this.state = {pantalla: window.innerWidth};
-    }
+    const [pantallaX, setPantallaX] = useState(window.innerWidth);
 
-    render() {
-        console.log(this.state.pantalla);
+    useEffect(() => {
+        window.addEventListener("resize", () => { setPantallaX(window.innerWidth) })
+        console.log("Estoy en effect")
+    }, [])
 
-        if(this.state.pantalla<993){
-            return(
-                <div class="bg-dark">
+    if (pantallaX < 992) {
+        return (
+            <div class="bg-dark">
                 <nav class="navbar navbar-dark bg-dark container">
-                    <a class="navbar-brand" href="#"><h1>JamChat</h1></a>
-                </nav>
-                </div>
-            );
-        }else{
-            return(
-                <div class="bg-dark">
-                <nav class="navbar navbar-dark bg-dark container">
-                    <a class="navbar-brand" href="#"><h1>JamChat</h1></a>
-                    <div class="navbar-nav ">
-                        <Login/>
+                    <div className="row">
+                        <div className="col  d-flex justify-content-center">
+                            <a class="navbar-brand" href="#"><h1>JamChat</h1></a>
+                        </div>
                     </div>
                 </nav>
-                </div>
-            );
-        }
+            </div>
+        );
+    } else {
+        return (
+            <div class="bg-dark">
+                <nav class="navbar navbar-dark bg-dark container">
+                    <div className="row">
+                        <div className="col-3">
+                            <a class="navbar-brand" href="#"><h1>JamChat</h1></a>
+                        </div>
+                        <div className="col-9">
+                            <div class="navbar-nav ">
+                                <Login />
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        );
     }
-
-
 }
