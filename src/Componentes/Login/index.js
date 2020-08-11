@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import {Link} from 'react-router-dom'
 import "./Style.css"
 
 export default class Login extends Component {
@@ -16,7 +17,7 @@ export default class Login extends Component {
                             <input class="form-control mr-lg-1 mt-3 mt-lg-0" type="password" placeholder="Contraseña" aria-label="Password" />
                         </div>
                         <div className="col-lg-2 py-0 px-0">
-                            <button class="btn btn-info mt-3 mt-lg-0 btn-block" type="submit">Ingresar</button>
+                            <button class="btn btn-info mt-3 mt-lg-0 btn-block" type="buttom">Ingresar</button>
                             <hr className="d-lg-none"></hr>
                         </div>
                     </div>
